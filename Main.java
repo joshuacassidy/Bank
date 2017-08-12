@@ -3,7 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException{
         Bank bank = new Bank("Irish Bank");
-
+        System.out.print("\033[H\033[2J");
         try(BufferedReader customerFile = new BufferedReader(new FileReader("src/Customers.txt"));
             BufferedReader transactions = new BufferedReader(new FileReader("src/Transactions.txt"))) {
             String customersData = customerFile.readLine();
@@ -31,6 +31,3 @@ public class Main {
 
     }
 }
-
-
-
