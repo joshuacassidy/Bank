@@ -1,0 +1,4 @@
+Dublin, Harry, 50.05
+Dublin, Henry, 175.34
+Dublin, Harvey, 220.12
+Kerry, Bob, 220.12

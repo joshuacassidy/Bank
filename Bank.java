@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 public class Bank {
     private String name;
+
+
+
     private ArrayList<Branch> branches;
 
     public Bank(String name) {
@@ -59,6 +62,9 @@ public class Bank {
             return true;
         }
         return false;
+    }
+    public ArrayList<Branch> getBranches() {
+        return branches;
     }
 
 
