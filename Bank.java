@@ -5,7 +5,7 @@ public class Bank {
 
     public Bank(String name) {
         this.name = name;
-        this.branches = new ArrayList<Branch>();
+        this.branches = new ArrayList<>();
     }
 
     public boolean addBranch(String branchName){
@@ -33,8 +33,7 @@ public class Bank {
     }
 
     private Branch findBranch(String branchName){
-        for(int i =0; i < branches.size(); i++){
-            Branch checkedBranch = this.branches.get(i);
+        for(Branch checkedBranch: branches){
             if(checkedBranch.getName().equals(branchName)){
                 return checkedBranch;
             }
@@ -47,22 +46,19 @@ public class Bank {
         if (branch != null){
             System.out.println("Customer details for " + branch.getName());
             ArrayList<Customer> branchCustomers = branch.getCustomers();
-            for(int i = 0; i < branchCustomers.size(); i++) {
-                Customer branchCustomer = branchCustomers.get(i);
+            for(Customer branchCustomer: branchCustomers) {
                 System.out.println("Customer: " + branchCustomer.getName());
                 if (showTransactions) {
                     System.out.println("Transactions");
                     ArrayList<Double> transactions = branchCustomer.getTransactions();
-                    for(int j = 0; j < transactions.size(); j++){
-                        System.out.println("Amount: " + transactions.get(j));
+                    for(double transaction: transactions){
+                        System.out.println("Amount: " + transaction);
                     }
                 }
             }
             return true;
         }
-        else{
-            return false;
-        }
+        return false;
     }
 
 

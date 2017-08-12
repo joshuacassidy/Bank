@@ -5,11 +5,7 @@ public class Branch {
 
     public Branch(String name) {
         this.name = name;
-        this.customers = new ArrayList<Customer>();
-    }
-
-    public String getName() {
-        return name;
+        this.customers = new ArrayList<>();
     }
 
     public boolean newCustomer(String customerName, double initialAmount){
@@ -29,14 +25,17 @@ public class Branch {
             return false;
     }
     private Customer findCustomer(String customerName){
-        for(int i = 0; i < this.customers.size(); i++){
-           Customer checkedCustomer = this.customers.get(i);
+        for(Customer checkedCustomer: this.customers){
            if(checkedCustomer.getName().equals(customerName)){
                return checkedCustomer;
            }
 
         }
         return null;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public ArrayList<Customer> getCustomers() {
